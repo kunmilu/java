@@ -1,7 +1,9 @@
 public class Person_enum {
-	
-	enum Sex {MAN, WOMAN}
-	
+
+	enum Sex {
+		MAN, WOMAN
+	}
+
 	private Sex sex;
 
 	public Person(Sex sex) {
@@ -13,13 +15,13 @@ public class Person_enum {
 			System.out.println("I'm a man");
 		} else {
 			System.out.println("I'm a woman");
-		}	
+		}
 	}
-	
+
 	public static void main(String[] args) {
 		Person man = new Person(Sex.MAN);
 		man.speak();
 		Person woman = new Person(Sex.WOMAN);
 		woman.speak();
-	}		
+	}
 }

@@ -8,36 +8,37 @@ import java.util.logging.*;
 public class TextReader {
 	private String path;
 
-    private static Logger logger = Logger.getLogger(TextReader.class.getName());
-    
-    enum Info { START, END };
+	private static Logger logger = Logger.getLogger(TextReader.class.getName());
 
-    private TextReader(String path) {
-        this.path = path;
-    }
+	enum Info {
+		START, END
+	};
 
-    private void execute() {
-        List<Integer> valueList = new ObjectList<>(); //なぜObjectListなのか
+	private TextReader(String path) {
+		this.path = path;
+	}
 
-        try(BufferedReader br = new BufferedReader(new FileReader(path))) {
-            String line = null;
-            while ((line = br.readLine()) != null) {
-                valueList.add(Integer.parseInt(line));
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        
-        for (Integer list: valueList) {
+	private void execute() {
+		List<Integer> valueList = new ObjectList<>();
+
+		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+			String line = null;
+			while ((line = br.readLine()) != null) {
+				valueList.add(Integer.parseInt(line));
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		for (Integer list : valueList) {
 			System.out.println(list);
-        }
+		}
 
-    }
+	}
 
-    public static void main(String ... args) {
-        logger.info(Info.START.name());
-        new TextReader(args[0]).execute();
-        logger.info(Info.END.name());
-    }
-
+	public static void main(String... args) {
+		logger.info(Info.START.name());
+		new TextReader(args[0]).execute();
+		logger.info(Info.END.name());
+	}
 }
