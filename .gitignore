@@ -1,16 +1,1 @@
-/AbstractPerson.class
-/ArgsLastPrinter.class
-/FizzBuzz.class
-/GenderSpeaker.class
-/HelloWorld.class
-/Man.class
-/Person_enum$Sex.class
-/Person_enum.class
-/Person_str.class
-/Recorder.class
-/RecorderRunner.class
-/TryCatchFinallyLog.class
-/TryCatchFinallySample.class
-/Woman.class
-/Calc.class
-/CalcLogic.class
+*.class
